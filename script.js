@@ -36,8 +36,61 @@ const headerInner = `
 `;
 header.innerHTML = headerInner;
 //푸터
-
+const footer = document.querySelector("footer");
+const footerInner = `
+      <div id="footerInner">
+        <div id="footerTop">
+          <div id="footerLogo">
+            <img src="./images/common/logo_white.png" alt="BE:" />
+          </div>
+          <nav id="fnb">
+            <ul>
+              <li>
+                <a href="#" title="Food">Food</a>
+              </li>
+              <li>
+                <a href="#" title="Beauty">Beauty</a>
+              </li>
+              <li>
+                <a href="#" title="Fashion">Fashion</a>
+              </li>
+              <li>
+                <a href="#" title="Lifestyle">Lifestyle</a>
+              </li>
+              <li>
+                <a href="#" title="Events">Events</a>
+              </li>
+              <li>
+                <a href="#" title="Sign Up" id="Sign">Login</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div id="footerBottom">
+          <address>
+            <ul>
+              <li>CEO : 김다예</li>
+              <li>서울 서초구 서초대로77길 41 대동2빌딩 9층</li>
+              <li>사업자 등록번호 : 123-45-67890</li>
+              <li class="flex-basis"></li>
+              <li>
+                <a href="#" title="개인정보처리방침">개인정보처리방침</a>
+              </li>
+              <li>
+                <a href="#" title="이용약관">이용약관</a>
+              </li>
+              <li>
+                <a href="#" title="회사소개">회사소개</a>
+              </li>
+            </ul>
+          </address>
+          <p>COPYRIGHT BE: ALL RIGHTS RESERVED.</p>
+        </div>
+      </div>
+`;
+footer.innerHTML = footerInner;
 // 스크롤 이벤트
+
 let prevscroll = 0;
 window.addEventListener("scroll", function () {
   let scrollTop = this.scrollY;
