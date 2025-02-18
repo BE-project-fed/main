@@ -1,6 +1,44 @@
+// 헤더
+const header = document.querySelector("header");
+const headerInner = `
+  <h1>
+        <a href="#" title="Home">
+          <img src="./images/common/logo_white.png" alt="Home" />
+        </a>
+      </h1>
+      <button id="toggleBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="gnb">
+        <ul>
+          <li>
+            <a href="#" title="Food">Food</a>
+          </li>
+          <li>
+            <a href="#" title="Beauty">Beauty</a>
+          </li>
+          <li>
+            <a href="#" title="Fashion">Fashion</a>
+          </li>
+          <li>
+            <a href="#" title="Lifestyle">Lifestyle</a>
+          </li>
+          <li>
+            <a href="#" title="Events">Events</a>
+          </li>
+          <li>
+            <a href="#" title="Sign Up" id="Sign">Login</a>
+          </li>
+        </ul>
+      </nav>
+`;
+header.innerHTML = headerInner;
+//푸터
+
 // 스크롤 이벤트
 let prevscroll = 0;
-const header = document.querySelector("header");
 window.addEventListener("scroll", function () {
   let scrollTop = this.scrollY;
   if (scrollTop > prevscroll) {

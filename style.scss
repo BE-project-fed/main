@@ -4,19 +4,22 @@
 html {
   font-size: 62.5%;
 }
+html,
+body {
+  overflow-x: hidden;
+}
 body {
   font-size: 1.6rem;
   font-family: "Pretendard";
 }
 // header
 header {
-  z-index: 1;
   left: 50%;
   transform: translateX(-50%);
   top: 30px;
   border-radius: 30px;
   position: fixed;
-  width: 600px;
+  width: 650px;
   height: 50px;
   line-height: 50px;
   display: flex;
@@ -26,6 +29,7 @@ header {
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(17, 25, 40, 0.75);
+  // background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.125);
   color: map-get($map: $colors, $key: light);
   transition: all 0.5s;
@@ -70,7 +74,7 @@ header {
           border-radius: 20px;
           position: relative;
           font-family: map-get($map: $font-family, $key: REM);
-          font-size: map-get($map: $font-size, $key: 12px);
+          font-size: map-get($map: $font-size, $key: 14px);
           transition: all 0.5s;
           &:hover {
             font-weight: bold;
@@ -124,6 +128,7 @@ header {
 }
 // main-contents
 main {
+  overflow: hidden;
   #intro {
     .index-first {
       height: 100vh;
@@ -145,6 +150,7 @@ main {
         letter-spacing: 2.25px;
         top: 878px;
         left: 1013px;
+        position: absolute;
       }
       img {
         width: 320px;
@@ -159,73 +165,77 @@ main {
     letter-spacing: -2px;
   }
   .section {
-    margin: 0 3%;
+    margin: 0 5%;
     height: 100vh;
   }
 }
 // footer
 footer {
   width: 100%;
-  padding: 3%;
-  background: map-get($map: $colors, $key: footerBg);
+  padding: 5%;
+  background: #333;
   color: #ccc;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-between;
   #footerInner {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    #footerLeft {
+    flex-wrap: wrap;
+    gap: 30px;
+    #footerTop {
+      width: 100%;
       display: flex;
-      flex-direction: column;
-      gap: 20px;
+      justify-content: space-between;
       #footerLogo {
-        width: 100px;
+        width: 120px;
         img {
           width: 100%;
-          object-fit: cover;
         }
       }
+      #fnb {
+        ul {
+          display: flex;
+          gap: 20px;
+        }
+      }
+    }
+    #footerBottom {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
       address {
         font-style: normal;
-        line-height: 200%;
         ul {
+          display: flex;
+          flex-wrap: wrap;
           li {
-            margin-right: 20px;
-            float: left;
             position: relative;
+            margin-right: 20px;
+            &.flex-basis {
+              flex-basis: 100%;
+            }
             &::after {
               content: "";
               position: absolute;
-              width: 1px;
-              height: 50%;
-              background: map-get($map: $colors, $key: light);
-              top: 50%;
               right: -10px;
-              transform: translateY(-50%);
-              font-size: map-get($map: $font-size, $key: 14px);
+              width: 1px;
+              height: 100%;
+              background-color: #ccc;
             }
             &:nth-child(3)::after {
-              opacity: 0;
+              display: none;
             }
             &:last-child::after {
-              opacity: 0;
+              display: none;
+            }
+            &:last-child,
+            &:nth-child(6),
+            &:nth-child(5) {
+              margin: 20px 20px 20px 0;
             }
           }
         }
       }
       p {
-        clear: left;
         font-size: map-get($map: $font-size, $key: 14px);
-      }
-    }
-    #footerRight {
-      #fnb ul {
-        display: flex;
-        gap: 20px;
       }
     }
   }
@@ -235,11 +245,18 @@ footer {
 @media screen and (max-width: 1024px) {
   // header
   header {
+    z-index: 2;
+    background: transparent;
     top: 0;
-    width: 100%;
+    width: 100% !important;
     height: 60px;
     border-radius: 0;
-    background: map-get($map: $colors, $key: light);
+    left: auto;
+    transform: none;
+    h1 {
+      position: relative;
+      z-index: 3;
+    }
     &.active {
       top: 0;
     }
@@ -247,28 +264,35 @@ footer {
       background: map-get($map: $colors, $key: light);
       transition: all 0.3s;
       opacity: 0;
+      visibility: hidden;
       position: absolute;
-      top: 60px;
-      width: 100%;
-      height: calc(100vh - 60px);
+      top: 0;
       left: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
       ul {
         gap: 30px;
         flex-direction: column;
         li {
           a {
+            font-size: map-get($map: $font-size, $key: 20px);
             color: map-get($map: $colors, $key: dark);
           }
         }
       }
     }
     #toggleBtn {
+      position: relative;
       display: block;
       span {
         background: map-get($map: $colors, $key: dark);
       }
       &.active {
-        opacity: 1;
+        z-index: 3;
         span {
           &:first-child {
             top: 50%;
@@ -284,6 +308,64 @@ footer {
         }
         & ~ #gnb {
           opacity: 1;
+          visibility: visible;
+          z-index: 2;
+          pointer-events: fill;
+        }
+      }
+    }
+  }
+  // footer
+  footer {
+    position: relative;
+    z-index: 1;
+    #footerTop {
+      flex-direction: column;
+      gap: 20px;
+      #footerLogo {
+        width: 100px !important;
+      }
+    }
+  }
+}
+
+// mobile.ver
+@media screen and (max-width: 767px) {
+  header {
+    left: 0;
+    transform: none;
+    width: 100vw;
+  }
+  footer {
+    #footerInner {
+      gap: 20px;
+      #footerTop {
+        font-size: map-get($map: $font-size, $key: 12px);
+        #footerLogo {
+          width: 80px !important;
+        }
+      }
+      #footerBottom {
+        address {
+          font-size: 12px;
+          ul {
+            li {
+              &:nth-child(2)::after {
+                display: none;
+              }
+              &:nth-child(3) {
+                margin-top: 10px;
+              }
+              &:last-child,
+              &:nth-child(6),
+              &:nth-child(5) {
+                margin: 10px 20px 10px 0 !important;
+              }
+            }
+          }
+        }
+        p {
+          font-size: 10px !important;
         }
       }
     }
