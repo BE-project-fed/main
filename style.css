@@ -124,15 +124,6 @@ header #toggleBtn span:last-child {
   top: 100%;
 }
 
-main {
-  overflow: hidden;
-}
-
-.section {
-  margin: 0 5%;
-  height: 100vh;
-}
-
 footer {
   width: 100%;
   padding: 5%;
