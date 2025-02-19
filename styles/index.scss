@@ -235,7 +235,7 @@ main {
       p {
         &:nth-child(even) {
           color: map-get($map: $colors, $key: light);
-          -webkit-text-stroke: 1.5px map-get($map: $colors, $key: dark);
+          -webkit-text-stroke: 1px map-get($map: $colors, $key: dark);
         }
       }
     }
@@ -254,6 +254,8 @@ main {
       position: relative;
     }
     .content-video iframe {
+      border: 1px solid #f00;
+      margin-top: 185px;
       position: absolute;
       top: 0;
       left: 0;
@@ -264,6 +266,7 @@ main {
   #con4 {
     width: 1728px;
     .category {
+      margin-top: 132px;
       display: flex;
       flex-direction: column;
       justify-content: center;

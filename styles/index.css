@@ -230,7 +230,7 @@ main #con2 .con2-text {
 }
 main #con2 .con2-text p:nth-child(even) {
   color: #fff;
-  -webkit-text-stroke: 1.5px #000;
+  -webkit-text-stroke: 1px #000;
 }
 main #con2 .con2Img {
   width: 200px;
@@ -245,6 +245,8 @@ main #con3 .content-video {
   position: relative;
 }
 main #con3 .content-video iframe {
+  border: 1px solid #f00;
+  margin-top: 185px;
   position: absolute;
   top: 0;
   left: 0;
@@ -255,6 +257,7 @@ main #con4 {
   width: 1728px;
 }
 main #con4 .category {
+  margin-top: 132px;
   display: flex;
   flex-direction: column;
   justify-content: center;
