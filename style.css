@@ -30,6 +30,7 @@ body {
 }
 
 header {
+  z-index: 1;
   left: 50%;
   transform: translateX(-50%);
   top: 30px;
@@ -64,7 +65,7 @@ header h1 img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 header #gnb ul {
   display: flex;
@@ -125,154 +126,6 @@ header #toggleBtn span:last-child {
 
 main {
   overflow: hidden;
-}
-main #intro .index {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-main #intro .title {
-  top: 280px;
-  left: 176px;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-main #intro .title p {
-  font: normal 3.3rem/1.75 "pretendard";
-  font-weight: 700;
-}
-main #intro .title .mainTitle {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  font: bold 8.5rem/0.87 "REM";
-}
-main #intro .indexImg1 {
-  position: absolute;
-  top: 108px;
-  right: 212px;
-}
-main #intro .indexImg2 {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  top: 758px;
-  left: 136px;
-  transform: rotate(11deg);
-}
-main #intro .subTitle {
-  top: 664px;
-  right: 212px;
-  position: absolute;
-  display: flex;
-  gap: 20px;
-}
-main #intro .subTitle p {
-  padding: 6px 22px;
-  gap: 10px;
-  border-radius: 40px;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-  margin-top: 47px;
-  font: normal 2.6rem/2.23 "Pretendard";
-  font-weight: 700;
-  letter-spacing: -0.52px;
-}
-main #con1 {
-  left: 96px;
-  margin-top: 147px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-main #con1 h2 {
-  font: normal 7rem/1 "REM";
-}
-main #con1 .parts {
-  display: flex;
-  align-items: center;
-  gap: 46px;
-}
-main #con1 .parts .part {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-main #con1 .parts .part img {
-  width: 430px;
-  height: 570px;
-  border-radius: 40px;
-  align-items: center;
-}
-main #con1 .parts .part p {
-  font: normal 3.6rem/1 "REM";
-  font-weight: 700;
-}
-main #con2 {
-  position: relative;
-}
-main #con2 .con2-text {
-  position: absolute;
-  width: 971px;
-  right: 120px;
-  margin-top: 60px;
-  font: 900 11rem/1 "REM";
-  text-align: right;
-  letter-spacing: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-main #con2 .con2-text p:nth-child(even) {
-  color: #fff;
-  -webkit-text-stroke: 1.5px #000;
-}
-main #con2 .con2Img {
-  width: 200px;
-  height: 200px;
-  transform: rotate(11deg);
-  position: absolute;
-  left: 200px;
-  margin-top: 500px;
-}
-main #con3 .content-video {
-  padding-top: 56.25%;
-  position: relative;
-}
-main #con3 .content-video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-main #con4 {
-  width: 1728px;
-}
-main #con4 .category {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-main #con4 .category .list {
-  width: 1436px;
-}
-main #con4 .category .list h3 {
-  font: 600 9rem/1 "REM";
-  margin-bottom: 50px;
-}
-main #con4 .category .list p {
-  font: 700 3rem/1 "REM";
-  padding: 50px;
-}
-main #con4 .category .list p a {
-  font: 700 5rem/1 "REM";
-  padding: 50px;
 }
 
 .section {
@@ -340,9 +193,7 @@ footer #footerInner #footerBottom address ul li:nth-child(3)::after {
 footer #footerInner #footerBottom address ul li:last-child::after {
   display: none;
 }
-footer #footerInner #footerBottom address ul li:last-child,
-footer #footerInner #footerBottom address ul li:nth-child(6),
-footer #footerInner #footerBottom address ul li:nth-child(5) {
+footer #footerInner #footerBottom address ul li:last-child, footer #footerInner #footerBottom address ul li:nth-child(6), footer #footerInner #footerBottom address ul li:nth-child(5) {
   margin: 20px 20px 20px 0;
 }
 footer #footerInner #footerBottom p {
@@ -453,12 +304,10 @@ footer #footerInner #footerBottom p {
   footer #footerInner #footerBottom address ul li:nth-child(3) {
     margin-top: 10px;
   }
-  footer #footerInner #footerBottom address ul li:last-child,
-  footer #footerInner #footerBottom address ul li:nth-child(6),
-  footer #footerInner #footerBottom address ul li:nth-child(5) {
+  footer #footerInner #footerBottom address ul li:last-child, footer #footerInner #footerBottom address ul li:nth-child(6), footer #footerInner #footerBottom address ul li:nth-child(5) {
     margin: 10px 20px 10px 0 !important;
   }
   footer #footerInner #footerBottom p {
     font-size: 10px !important;
   }
-} /*# sourceMappingURL=style.css.map */
+}
