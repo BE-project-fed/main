@@ -1,0 +1,166 @@
+header {
+  z-index: 1;
+}
+main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 150px;
+  h2 {
+    font-size: 70px;
+    color: map-get($map: $colors, $key: loginTitle);
+  }
+  #form {
+    box-shadow: 0 0 12px rgba($color: #000000, $alpha: 0.6);
+    border-radius: 30px;
+    width: 800px;
+    padding: 80px 150px;
+    margin: 70px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    position: relative;
+    input:not(input[type="checkbox"]) {
+      width: 100%;
+      height: 60px;
+      border-radius: 50px;
+      border: none;
+      &:focus {
+        outline: none;
+      }
+    }
+    #inputWrap {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .inputBox {
+        position: relative;
+        input {
+          padding-left: 160px;
+          background: map-get($map: $colors, $key: loginTitle);
+        }
+        label {
+          position: absolute;
+          left: 30px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: map-get($map: $font-size, $key: 14px);
+          color: map-get($map: $colors, $key: label);
+          font-weight: bold;
+          &::placeholder {
+            font-size: map-get($map: $font-size, $key: 18px);
+          }
+        }
+      }
+    }
+    #userInfo {
+      display: flex;
+      justify-content: space-between;
+      font-size: map-get($map: $font-size, $key: 14px);
+      div:first-child {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      div:last-child {
+        a:last-child {
+          position: relative;
+          margin-left: 21px;
+          &::before {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background: map-get($map: $colors, $key: dark);
+            left: -10px;
+          }
+        }
+      }
+    }
+    #inputBtn {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      input {
+        cursor: pointer;
+      }
+      #loginBtn {
+        background: map-get($map: $colors, $key: dark);
+        color: map-get($map: $colors, $key: light);
+      }
+      #joinBtn {
+        background: map-get($map: $colors, $key: light);
+        border: 1px solid map-get($map: $colors, $key: dark);
+      }
+    }
+    #easyLogin {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      a {
+        border-radius: 50px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        color: map-get($map: $colors, $key: light);
+        &:first-child {
+          background: map-get($map: $colors, $key: naver);
+        }
+        &:nth-child(2) {
+          background: map-get($map: $colors, $key: kakao);
+          color: map-get($map: $colors, $key: dark);
+        }
+        &:nth-child(3) {
+          background: map-get($map: $colors, $key: facebook);
+        }
+        &:last-child {
+          background: map-get($map: $colors, $key: dark);
+        }
+      }
+    }
+  }
+}
+
+// tablet.ver
+@media screen and (max-width: 1024px) {
+  main {
+    padding-top: 110px;
+    h2 {
+      font-size: map-get($map: $font-size, $key: 50px);
+    }
+    #form {
+      width: 700px;
+      margin: 50px 0;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  header {
+    padding: 0 5% !important;
+  }
+  main {
+    #form {
+      width: 100%;
+      padding: 0 5%;
+      box-shadow: none;
+      input:not(input[type="checkbox"]) {
+        height: 50px;
+        border-radius: 50px;
+        border: none;
+      }
+      #inputWrap .inputBox label {
+        font-size: map-get($map: $font-size, $key: 12px);
+      }
+      #easyLogin a {
+        height: 50px;
+      }
+    }
+  }
+}
